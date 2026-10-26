@@ -12,6 +12,8 @@ todolist/
 
 ## 1. Banco de dados (MySQL)
 
+Acesse o XAMPP e ligue o Mysql
+
 Crie o banco e a tabela executando o script:
 
 ```bash
