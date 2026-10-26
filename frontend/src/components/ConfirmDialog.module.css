@@ -1,0 +1,28 @@
+.body {
+  padding: 8px 20px 16px;
+}
+
+.message {
+  overflow-wrap: anywhere;
+  color: #444;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.cancel,
+.danger {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.cancel { background: #f1f1f1; }
+.cancel:hover { background: #e7e7e7; }
+.danger { background: var(--red); color: #fff; }
+.danger:hover { background: var(--red-strong); }

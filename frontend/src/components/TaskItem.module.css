@@ -1,0 +1,135 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--line);
+}
+
+.leaving {
+  animation: leave 0.45s ease-in 0.2s forwards;
+}
+
+@keyframes leave {
+  to { opacity: 0; transform: translateX(8px); }
+}
+
+/* Checkbox circular: ao concluir, preenche com gradiente vermelho → laranja */
+.check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  padding: 0;
+  border: 2px solid #8a8a8a;
+  border-radius: 50%;
+  background: transparent;
+  color: transparent;
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+}
+
+.check:hover {
+  border-color: var(--red);
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.check[aria-checked='true'] {
+  border-color: transparent;
+  background: linear-gradient(135deg, #ffa24d 0%, #ef5a45 50%, #c8281f 100%);
+  color: #fff;
+  animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.title {
+  overflow-wrap: anywhere;
+}
+
+.late {
+  color: var(--red);
+}
+
+.done .title {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.badge {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--red-soft);
+  color: var(--red-strong);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.due {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.toneOverdue { color: var(--red); }
+.toneToday { color: var(--green); }
+.toneTomorrow { color: var(--orange); }
+.toneWeek { color: var(--purple); }
+.toneLater { color: var(--muted); }
+
+/* Ações só aparecem no hover (ou foco por teclado). Em telas de toque ficam sempre visíveis. */
+.actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+.item:hover .actions,
+.item:focus-within .actions {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .actions { opacity: 1; }
+}
+
+.iconBtn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.iconBtn:hover {
+  background: #f0f0f0;
+  color: var(--ink);
+}
+
+.danger:hover {
+  background: var(--red-soft);
+  color: var(--red);
+}

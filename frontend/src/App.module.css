@@ -1,0 +1,139 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 24px;
+}
+
+.menu {
+  display: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.menu:hover {
+  background: #f1f1f1;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 24px 120px;
+}
+
+.head {
+  margin-bottom: 20px;
+}
+
+.head h1 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.summary {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.status {
+  padding: 32px 0;
+  color: var(--muted);
+}
+
+.refreshing {
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--red-soft);
+  color: var(--red-strong);
+}
+
+.error button {
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  font-weight: 600;
+}
+
+.fab {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(219, 76, 63, 0.45);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.fab:hover {
+  background: var(--red-strong);
+  transform: scale(1.06);
+}
+
+.fab:active {
+  transform: scale(0.96);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 60;
+  max-width: calc(100vw - 32px);
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2b2b2b;
+  color: #fff;
+  transform: translateX(-50%);
+  animation: toast 0.2s ease-out;
+}
+
+@keyframes toast {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+}
+
+@media (max-width: 800px) {
+  .menu { display: grid; }
+  .topbar { padding: 0 16px; }
+  .content { padding: 16px 16px 112px; }
+  .head h1 { font-size: 22px; }
+  .fab { right: 20px; bottom: 20px; }
+}

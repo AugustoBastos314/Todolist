@@ -1,0 +1,159 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 280px;
+  height: 100vh;
+  padding: 20px 12px;
+  background: var(--sidebar);
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #efebe8;
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.progress strong {
+  font-size: 13px;
+}
+
+.bar {
+  height: 6px;
+  border-radius: 999px;
+  background: #ececec;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffa24d, #db4c3f);
+  transition: width 0.4s ease;
+}
+
+.total {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--red);
+  font-weight: 600;
+  text-align: left;
+}
+
+.add:hover {
+  background: #f5ede9;
+}
+
+.plus {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #3d3d3d;
+  text-align: left;
+}
+
+.item:hover {
+  background: #f3eeeb;
+}
+
+.active,
+.active:hover {
+  background: #ffefe5;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.label {
+  flex: 1;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.active .count {
+  color: var(--red);
+}
+
+.scrim {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    z-index: 40;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.14);
+  }
+
+  .open {
+    transform: none;
+  }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 39;
+    display: block;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .scrimOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

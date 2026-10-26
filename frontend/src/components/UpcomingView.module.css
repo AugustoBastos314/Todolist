@@ -1,0 +1,28 @@
+.day {
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.day span {
+  margin-left: 4px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 2px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+}
+
+.add:hover {
+  color: var(--red);
+}

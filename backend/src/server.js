@@ -7,6 +7,7 @@ const app = Fastify({ logger: true });
 const { CORS_ORIGIN, PORT} = process.env
 await app.register(cors, {
   origin: CORS_ORIGIN || 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
 });
 
 app.get('/health', async () => ({ status: 'ok' }));

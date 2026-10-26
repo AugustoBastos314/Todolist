@@ -1,0 +1,16 @@
+.section {
+  margin-bottom: 20px;
+}
+
+.heading {
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.count {
+  margin-left: 4px;
+  font-weight: 400;
+  color: var(--muted);
+}

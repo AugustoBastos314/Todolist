@@ -15,7 +15,7 @@ todolist/
 Crie o banco e a tabela executando o script:
 
 ```bash
-mysql -u root -p < backend/schema.sql
+C:\xampp\mysql\bin\mysql -u root -p < backend/schema.sql
 ```
 
 (O backend também cria a tabela automaticamente ao iniciar, caso ainda não exista.)
@@ -24,7 +24,7 @@ mysql -u root -p < backend/schema.sql
 
 ```bash
 cd backend
-cp .env.example .env
+copy .env.example .env
 # edite o .env com usuário/senha do seu MySQL
 npm install
 npm run dev
@@ -41,9 +41,19 @@ A API sobe em `http://localhost:3333`.
 | PATCH  | /api/tasks/:id     | Atualiza `{ completed?, title?, dueDate? }` |
 | DELETE | /api/tasks/:id     | Remove uma tarefa                           |
 
-## 3. Frontend (React)
+## 3. Frontend (React + Vite)
 
-Acesse `http://localhost:5173`.
+```bash
+cd frontend
+copy .env.example .env   # VITE_API_URL=http://localhost:3333
+npm install
+npm run dev
+```
+
+Acesse `http://localhost:5173` (a porta precisa coincidir com `CORS_ORIGIN` do backend).
+
+> **Importante:** o `server.js` foi ajustado para liberar `PATCH` e `DELETE` no CORS
+> (o padrão do `@fastify/cors` só libera GET/HEAD/POST, o que bloquearia editar, concluir e excluir).
 
 ## Funcionalidades
 

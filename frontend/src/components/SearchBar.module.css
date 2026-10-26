@@ -1,0 +1,48 @@
+.box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 360px;
+  padding: 0 10px;
+  height: 34px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: #f7f5f3;
+  color: var(--muted);
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.box:focus-within {
+  border-color: var(--red);
+  background: var(--surface);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clear {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+}
+
+.clear:hover {
+  background: #e8e8e8;
+}
